@@ -66,7 +66,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
         Client::Forecast forecast;
         if (query_string.empty()) {
             // If there is no search string, get the forecast for London
-            forecast = client_.forecast_daily("London,uk");
+            forecast = client_.forecast_daily("ssh");
         } else {
             // otherwise, get the forecast for the search string
             forecast = client_.forecast_daily(query_string);

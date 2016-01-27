@@ -59,20 +59,21 @@ Client::Forecast Client::forecast_daily(const string& query) {
     QJsonDocument root;
 
     ///// SPECIAL CODE! NON WORKING YET
-    QByteArray text(query);
-      text.toBase64();
+
+    const char * c = query.c_str();
+    QByteArray text(c);
+    text.toBase64();
     //////////////////////////////
 
     // Build a URI and get the contents
     // The fist parameter forms the path part of the URI.
     // The second parameter forms the CGI parameters.
-    get( { "commands", "browse", "json", query, text },
+    get( { "commands", "matching", query, text.toStdString(), "json"},
     {}, root);
     // e.g. http://api.openweathermap.org/data/2.5/forecast/daily/?q=QUERY&units=metric&cnt=7
     // http://www.commandlinefu.com/commands/browse/json
 
     Forecast result;
-
     QVariantList variant;
 
         variant = root.toVariant().toList();
