@@ -58,11 +58,8 @@ void Client::get(const net::Uri::Path &path,
 Client::Forecast Client::forecast_daily(const string& query) {
     QJsonDocument root;
 
-    ///// SPECIAL CODE! NON WORKING YET
-
-    const char * c = query.c_str();
-    QByteArray text(c);
-    text.toBase64();
+    ///// SPECIAL CODE! THANK YOU NATHAN OSMAN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    auto text = QByteArray::fromStdString(query).toBase64();
     //////////////////////////////
 
     // Build a URI and get the contents
