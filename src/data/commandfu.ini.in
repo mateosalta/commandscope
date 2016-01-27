@@ -1,0 +1,20 @@
+[ScopeConfig]
+_DisplayName=Command Line
+_Description=This is a Commandfu scope
+Art=screenshot.png
+Author=Matthew Jump
+Icon=icon.png
+Keywords=command line
+
+[Appearance]
+//PageHeader.Logo=
+
+
+PageHeader.ForegroundColor = #3eb34f
+PageHeader.Background = gradient:///#3b3b3b/#292929
+PageHeader.DividerColor = #004d00
+LogoOverlayColor = #FF8D00
+PreviewButtonColor = #3eb34f
+
+BackgroundColor = #222222
+ForegroundColor = #3eb34f
