@@ -7,11 +7,10 @@
 #defaultValue = London,uk
 #_displayName = Default Location
 
-#[units]
-#type = list
-#_displayName = Temperature Units
-#_displayValues = Metric;Imperial
-#defaultValue = 0
+[sort]
+type = boolean
+displayName = Sort by Votes
+defaultValue = true
 
 #[forecast]
 #type = boolean
