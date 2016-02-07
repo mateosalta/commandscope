@@ -22,7 +22,7 @@ const static string FORECAST_TEMPLATE =
         "template": {
         "category-layout": "vertical-journal",
         "card-layout": "horizontal",
-        "card-size": "small",
+        "card-size": "large",
                      "card-background": "color:///#000000"
 
         },
@@ -44,8 +44,8 @@ const static string WICKED_TEMPLATE =
         "schema-version": 1,
         "template": {
         "category-layout": "vertical-journal",
-        "card-layout": "horizontal",
-        "card-size": "small",
+        "card-layout": "horizontal-list",
+        "card-size": "large",
         "card-background": "color:///#ED3146"
         },
         "components": {
@@ -74,8 +74,6 @@ void Query::run(sc::SearchReplyProxy const& reply) {
     sc::Department::SPtr all_depts = sc::Department::create("", query(), ("Deaprtments"));
 
     sc::Department::SPtr ubu_department = sc::Department::create("ubuntu-phone", query(), ("ubuntu-phone"));
-    sc::Department::SPtr new_department = sc::Department::create("browse/last-month", query(), ("new-last-month"));
-    sc::Department::SPtr top_department = sc::Department::create("browse/sort-by-votes", query(), ("all-time-greats"));
     sc::Department::SPtr forthewicked_department = sc::Department::create("forthewicked", query(), ("for-the-wicked"));
 
     sc::Department::SPtr tags_department = sc::Department::create("tags", query(), ("tags"));
@@ -91,8 +89,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
     sc::Department::SPtr cat_department = sc::Department::create("cat", query(), ("cat"));
 
     all_depts->set_subdepartments({ubu_department,
-                                   new_department,
-                                   top_department,
+
                                    forthewicked_department,
                                    tags_department
                                    });
@@ -114,27 +111,8 @@ void Query::run(sc::SearchReplyProxy const& reply) {
         string query_string = query.query_string();
         const string department = query.department_id();
 
-        Client::Forecast forecast;
+        Client::Command forecast;
 
-        if (department == "") {
-        auto new_sys = "matching/";
-        if (settings().at("sort").get_bool() == true) { auto sort_sys = "sort-by-votes";
-        if (query_string.empty()) { forecast = client_.forecast_daily("ubuntu", new_sys, sort_sys);
-        } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys);
-        }} else { auto sort_sys = "";
-            if (query_string.empty()) { forecast = client_.forecast_daily("ubuntu", new_sys, sort_sys);
-            } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
-        }
-
-        if (department == "browse/last-month") {
-        auto new_sys = "browse/last-month";
-        if (settings().at("sort").get_bool() == true) { auto sort_sys = "sort-by-votes";
-        if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
-        } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys);
-        }} else { auto sort_sys = "";
-            if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
-            } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
-        }
 
         if (department == "ubuntu-phone") {
         auto new_sys = "tagged/2987/ubuntu-phone";
@@ -146,33 +124,6 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
         }
 
-        if (department == "forthewicked") {
-        auto new_sys = "forthewicked";
-        if (settings().at("sort").get_bool() == true) { auto sort_sys = "sort-by-votes";
-        if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
-        } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys);
-        }} else { auto sort_sys = "";
-            if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
-            } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
-
-        auto forecast_cat = reply->register_category("forecast", _("Commands"), "",
-                                                     sc::CategoryRenderer(WICKED_TEMPLATE));
-        for (const auto &weather : forecast.weather) {
-            sc::CategorisedResult res(forecast_cat);
-            res.set_uri(weather.url);
-            res["title"] = weather.summary;
-            res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
-            res["subtitle"] = "⇳" + weather.votes;
-            res["summary"] = weather.command;
-            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
-            res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
-            res["mmm"] = weather.command;
-            res["art"] = "/usr/share/icons/suru/actions/scalable/info.svg";
-            if (!reply->push(res)) {
-                return;
-            }
-        }
-        }
 
         if (department == "tags") {
         auto new_sys = "matching";
@@ -275,12 +226,9 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
         }
 
-        if (department == "browse/sort-by-votes") {
-        auto new_sys = "browse";
-        auto sort_sys = "sort-by-votes";
-        if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
-        } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
-        auto forecast_cat = reply->register_category("forecast", _("Commands"), "",
+
+
+        auto forecast_cat = reply->register_category("Commands", ("Commands"), "",
                                                      sc::CategoryRenderer(FORECAST_TEMPLATE));
         for (const auto &weather : forecast.weather) {
             sc::CategorisedResult res(forecast_cat);
@@ -294,9 +242,131 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["mmm"] = weather.command;
             if (!reply->push(res)) {
                 return;
+            }}
+
+
+        if (department == "forthewicked") {
+        auto new_sys = "forthewicked";
+        if (settings().at("sort").get_bool() == true) { auto sort_sys = "sort-by-votes";
+        if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
+        } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys);
+        }} else { auto sort_sys = "";
+            if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
+            } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }}
+
+        auto forecast_cat = reply->register_category("forecast", _("Commands"), "",
+                                                     sc::CategoryRenderer(WICKED_TEMPLATE));
+        for (const auto &weather : forecast.weather) {
+            sc::CategorisedResult res(forecast_cat);
+            res.set_uri(weather.url);
+            res["title"] = weather.summary;
+            res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
+            res["subtitle"] = "⇳" + weather.votes;
+            res["summary"] = weather.command;
+            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
+            res["mmm"] = weather.command;
+            res["art"] = "/usr/share/icons/suru/actions/scalable/info.svg";
+            if (!reply->push(res)) {
+                return;
             }
         }
+        }
 
+        if (department == "") {
+        auto new_sys = "matching/";
+        if (settings().at("sort").get_bool() == true) { auto sort_sys = "sort-by-votes";
+        if (!query_string.empty()) {forecast = client_.forecast_daily(query_string, new_sys, sort_sys);}
+        } else { auto sort_sys = "";
+            if (!query_string.empty()) { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }
+            }
+
+        auto forecast_cat = reply->register_category("matching", (query_string), "",
+                                                     sc::CategoryRenderer(FORECAST_TEMPLATE));
+        for (const auto &weather : forecast.weather) {
+            sc::CategorisedResult res(forecast_cat);
+            res.set_uri(weather.url);
+            res["title"] = weather.summary;
+            res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
+            res["subtitle"] = "⇳" + weather.votes;
+            res["summary"] = weather.command;
+            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
+            res["mmm"] = weather.command;
+            if (!reply->push(res)) {
+                return;
+            }}
+
+
+        if (department == "") {
+        auto new_sys = "browse/last-month";
+        if (settings().at("sort").get_bool() == true) { auto sort_sys = "sort-by-votes";
+        if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
+        } } else { auto sort_sys = "";
+            if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
+            } }
+       if (query_string.empty()){ auto forecast_cat = reply->register_category("last", ("last-month"), "",
+                                                     sc::CategoryRenderer(FORECAST_TEMPLATE));
+        for (const auto &weather : forecast.weather) {
+            sc::CategorisedResult res(forecast_cat);
+            res.set_uri(weather.url);
+            res["title"] = weather.summary;
+            res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
+            res["subtitle"] = "⇳" + weather.votes;
+            res["summary"] = weather.command;
+            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
+            res["mmm"] = weather.command;
+            if (!reply->push(res)) {
+                return;
+            }}}}
+
+        if (department == "") {
+            auto new_sys = "browse";
+            auto sort_sys = "sort-by-votes";
+            if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
+            } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }
+       if (query_string.empty()){ auto forecast_cat = reply->register_category("alltime", ("all-time-greats"), "",
+                                                     sc::CategoryRenderer(FORECAST_TEMPLATE));
+        for (const auto &weather : forecast.weather) {
+            sc::CategorisedResult res(forecast_cat);
+            res.set_uri(weather.url);
+            res["title"] = weather.summary;
+            res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
+            res["subtitle"] = "⇳" + weather.votes;
+            res["summary"] = weather.command;
+            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
+            res["mmm"] = weather.command;
+            if (!reply->push(res)) {
+                return;
+            }}}}
+        /*   if (department == "") {
+           auto new_sys = "browse";
+           auto sort_sys = "sort-by-votes";
+           if (query_string.empty()) { forecast = client_.forecast_daily("", new_sys, sort_sys);
+           } else { forecast = client_.forecast_daily(query_string, new_sys, sort_sys); }
+
+           auto forecast_cat = reply->register_category("votes", _("all-time-greats"), "",
+                                                        sc::CategoryRenderer(FORECAST_TEMPLATE));
+           for (const auto &weather : forecast.weather) {
+               sc::CategorisedResult res(forecast_cat);
+               res.set_uri(weather.url);
+               res["title"] = weather.summary;
+               res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
+               res["subtitle"] = "⇳" + weather.votes;
+               res["summary"] = weather.command;
+               res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+               res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
+               res["mmm"] = weather.command;
+               if (!reply->push(res)) {
+                   return;
+               }
+           }
+           } */
+
+
+}
 
     } catch (domain_error &e) {
         // Handle exceptions being thrown by the client API

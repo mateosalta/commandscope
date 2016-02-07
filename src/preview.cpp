@@ -73,7 +73,6 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
         {"temporaryIcon", sc::Variant("/usr/share/icons/suru/actions/scalable/tick.svg")},
         {"uri", result["clp"]} });
      actions.add_attribute_value("actions", builder.end());
-
      // Define the actions section
 /*     sc::PreviewWidget icon_actions("actions", "actions");
      //sc::VariantBuilder builder;

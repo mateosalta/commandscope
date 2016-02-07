@@ -49,7 +49,7 @@ public:
     ///
     /// \brief The Forecast struct
     ///
-    struct Forecast {
+    struct Command {
         WeatherList weather;
     };
     ///
@@ -66,7 +66,7 @@ public:
     /// \param sort_sys
     /// \return
     ///
-    virtual Forecast forecast_daily(const std::string &query, const std::string &new_sys, const std::string &sort_sys);
+    virtual Command forecast_daily(const std::string &query, const std::string &new_sys, const std::string &sort_sys);
     ///
     /// \brief cancel
     ///

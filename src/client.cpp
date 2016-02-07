@@ -47,7 +47,7 @@ void Client::get(const net::Uri::Path &path,
 /// \param sort_sys
 /// \return
 ///
-Client::Forecast Client::forecast_daily(const string& query, const string& new_sys, const string& sort_sys) {
+Client::Command Client::forecast_daily(const string& query, const string& new_sys, const string& sort_sys) {
     QJsonDocument root;
     ///// SPECIAL CODE! THANK YOU NATHAN OSMAN!!!!!!!!!!!!!!
     auto text = QByteArray::fromStdString(query).toBase64();
@@ -55,7 +55,7 @@ Client::Forecast Client::forecast_daily(const string& query, const string& new_s
     get( { "commands", new_sys, query, text.toStdString(), sort_sys, "json"},
     {}, root);
     // http://www.commandlinefu.com/commands/browse/json
-    Forecast result;
+    Command result;
     QVariantList variant;
         variant = root.toVariant().toList();
     for (const QVariant &i : variant) {
