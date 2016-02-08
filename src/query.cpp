@@ -237,7 +237,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
             res["subtitle"] = "⇳" + weather.votes;
             res["summary"] = weather.command;
-            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["term"] = "appid://com.ubuntu.terminal/terminal/current-user-version";
             res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
             res["mmm"] = weather.command;
             if (!reply->push(res)) {
@@ -263,7 +263,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
             res["subtitle"] = "⇳" + weather.votes;
             res["summary"] = weather.command;
-            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["term"] = "appid://com.ubuntu.terminal/terminal/current-user-version";
             res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
             res["mmm"] = weather.command;
             res["art"] = "/usr/share/icons/suru/actions/scalable/info.svg";
@@ -290,7 +290,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
             res["subtitle"] = "⇳" + weather.votes;
             res["summary"] = weather.command;
-            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["term"] = "appid://com.ubuntu.terminal/terminal/current-user-version";
             res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
             res["mmm"] = weather.command;
             if (!reply->push(res)) {
@@ -314,7 +314,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
             res["subtitle"] = "⇳" + weather.votes;
             res["summary"] = weather.command;
-            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["term"] = "appid://com.ubuntu.terminal/terminal/current-user-version";
             res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
             res["mmm"] = weather.command;
             if (!reply->push(res)) {
@@ -335,7 +335,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["mascot"] = "http://www.commandlinefu.com/images/favicon.ico";
             res["subtitle"] = "⇳" + weather.votes;
             res["summary"] = weather.command;
-            res["term"] = "application:///com.ubuntu.terminal_terminal_0.7.140.desktop";
+            res["term"] = "appid://com.ubuntu.terminal/terminal/current-user-version";
             res["clp"] = "scope://com.canonical.scopes.clickstore?q=terminal";
             res["mmm"] = weather.command;
             if (!reply->push(res)) {
