@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-07 20:09-0600\n"
+"POT-Creation-Date: 2016-02-15 19:36-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,97 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/query.cpp:257
+#. sc::CannedQuery qwerty(sc::SearchQueryBase::query());
+#: ../src/query.cpp:194
+msgid "Deaprtments"
+msgstr ""
+
+#: ../src/query.cpp:196
+msgid "ubuntu-phone"
+msgstr ""
+
+#: ../src/query.cpp:197
+msgid "for-the-wicked"
+msgstr ""
+
+#: ../src/query.cpp:199
+msgid "tags"
+msgstr ""
+
+#: ../src/query.cpp:234
+msgid "Filter"
+msgstr ""
+
+#: ../src/query.cpp:236
+msgid "sort-by-votes"
+msgstr ""
+
+#: ../src/query.cpp:237
+msgid "sort-by-date"
+msgstr ""
+
+#: ../src/query.cpp:273 ../src/query.cpp:411 ../src/query.cpp:516
+#: ../src/query.cpp:627 ../src/query.cpp:655 ../src/query.cpp:755
+#: ../src/query.cpp:894 ../src/query.cpp:1106 ../src/query.cpp:1133
 msgid "Commands"
+msgstr ""
+
+#: ../src/query.cpp:704 ../src/query.cpp:943 ../src/query.cpp:1183
+msgid "last-month"
+msgstr ""
+
+#: ../src/query.cpp:725 ../src/query.cpp:964 ../src/query.cpp:1205
+msgid "all-time-greats"
+msgstr ""
+
+#: ../src/preview.cpp:67
+msgid "Open Terminal"
+msgstr ""
+
+#: ../src/preview.cpp:73
+msgid "Get Terminal"
+msgstr ""
+
+#: ../src/preview.cpp:104
+msgid "Adapt and Copy/Paste Command:"
+msgstr ""
+
+#: ../src/preview.cpp:105
+msgid "Open"
+msgstr ""
+
+#: ../src/preview.cpp:112 ../src/preview.cpp:120 ../src/preview.cpp:128
+#: ../src/preview.cpp:136
+msgid "WARNING:"
+msgstr ""
+
+#: ../src/preview.cpp:114
+msgid ""
+"The Terminal is a magical and powerful thing, on the phone it runs "
+"unconfined. Any  move can and will spell certain doom, delete your files, "
+"launch missiles, destroy your phone, or worse. YOU HAVE BEEN WARNED!"
+msgstr ""
+
+#: ../src/preview.cpp:122
+msgid ""
+"If using this scope on phone/tablet be aware that: <br> - The system image "
+"is read only for a reason, enabling read/write will compromise the system in "
+"a way that will ultimately brick or cause you to reflash the phone. <br> - "
+"If you choose to enable read/write be warned that you will not get system "
+"image updates <br> - Do not use apt/apt-get or any such utilites, they will "
+"break your phone."
+msgstr ""
+
+#: ../src/preview.cpp:130
+msgid ""
+"Use for documentation purposes only, copy/pasting and running commands is a "
+"terrible idea and is not supported nor recommended"
+msgstr ""
+
+#: ../src/preview.cpp:138
+msgid "Do not use while driving."
+msgstr ""
+
+#: ../src/preview.cpp:144
+msgid "Powered By:"
 msgstr ""

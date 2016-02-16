@@ -1,19 +1,17 @@
-# Below are some example settings. You can access your scope's
-# settings by calling settings() from the Query::run() method.
-# E.g. auto location = settings().at("location").get_string();
-
-#[location]
-#type = string
-#defaultValue = London,uk
-#_displayName = Default Location
-
 [sort]
 type = boolean
-displayName = Sort by Votes
-defaultValue = true
+defaultValue = false
+_displayName = sort-search-by-votes
 
-#[forecast]
-#type = boolean
-#defaultValue = true
-#_displayName = Show Forecast
+
+[ocd]
+type = boolean
+_displayName = OCD Layout
+defaultValue = false
+
+[nm]
+type = boolean
+_displayName = Exit The Matrix
+defaultValue = false
+
 

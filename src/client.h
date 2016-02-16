@@ -26,9 +26,9 @@ public:
         std::string user_agent { "example-network-scope 0.1; (foo)" };
     };
     ///
-    /// \brief The Weather struct
+    /// \brief The Commands struct
     ///
-    struct Weather {
+    struct Commands {
         std::string id;
         std::string command;
         std::string summary;
@@ -37,20 +37,20 @@ public:
 
     };
     ///
-    /// \brief WeatherList
+    /// \brief CommandList
     ///
-    typedef std::deque<Weather> WeatherList;
+    typedef std::deque<Commands> CommandList;
     ///
     /// \brief The Current struct
     ///
     struct Current {
-        Weather weather;
+        Commands weather;
     };
     ///
     /// \brief The Forecast struct
     ///
     struct Command {
-        WeatherList weather;
+        CommandList commands;
     };
     ///
     /// \brief Client
@@ -66,7 +66,7 @@ public:
     /// \param sort_sys
     /// \return
     ///
-    virtual Command forecast_daily(const std::string &query, const std::string &new_sys, const std::string &sort_sys);
+    virtual Command command_list(const std::string &query, const std::string &new_sys, const std::string &sort_sys);
     ///
     /// \brief cancel
     ///

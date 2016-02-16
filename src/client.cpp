@@ -41,13 +41,13 @@ void Client::get(const net::Uri::Path &path,
     }
 }
 ///
-/// \brief Client::forecast_daily
+/// \brief Client::command_list
 /// \param query
 /// \param new_sys
 /// \param sort_sys
 /// \return
 ///
-Client::Command Client::forecast_daily(const string& query, const string& new_sys, const string& sort_sys) {
+Client::Command Client::command_list(const string& query, const string& new_sys, const string& sort_sys) {
     QJsonDocument root;
     ///// SPECIAL CODE! THANK YOU NATHAN OSMAN!!!!!!!!!!!!!!
     auto text = QByteArray::fromStdString(query).toBase64();
@@ -60,8 +60,8 @@ Client::Command Client::forecast_daily(const string& query, const string& new_sy
         variant = root.toVariant().toList();
     for (const QVariant &i : variant) {
         QVariantMap item = i.toMap();
-        result.weather.emplace_back(
-                    Weather { item["id"].toString().toStdString(),
+        result.commands.emplace_back(
+                    Commands { item["id"].toString().toStdString(),
                               item["command"].toString().toStdString(),
                               item["summary"].toString().toStdString(),
                               item["votes"].toString().toStdString(),

@@ -1,10 +1,10 @@
 [ScopeConfig]
-_DisplayName=Command Line
+_DisplayName=Command Line Scope
 _Description=This is a Commandfu scope
 Art=screenshot.png
 Author=Matthew Jump
 Icon=icon.png
-Keywords=command line
+Keywords=command line, commands, terminal, developer, tool, script
 
 [Appearance]
 //PageHeader.Logo=
