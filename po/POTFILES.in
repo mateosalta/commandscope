@@ -2,8 +2,17 @@ src/scope.cpp
 src/query.cpp
 src/preview.cpp
 src/client.cpp
+trunk/src/scope.cpp
+trunk/src/query.cpp
+trunk/src/preview.cpp
+trunk/src/client.cpp
 src/scope.h
 src/localization.h
 src/query.h
 src/preview.h
 src/client.h
+trunk/src/scope.h
+trunk/src/localization.h
+trunk/src/query.h
+trunk/src/preview.h
+trunk/src/client.h

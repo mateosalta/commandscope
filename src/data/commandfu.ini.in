@@ -1,17 +1,18 @@
 [ScopeConfig]
-_DisplayName=Command Line Scope
+_DisplayName=C̫̝ó̿̆̓̆m͍͉͎͇̰̬̩͐̓̕m̺͍̞̙͖̯͘a̮̠͓̮̿́ͅn̔ͫdͬͣ͢ ̧̰̳͒Ļ̳̘̬̠̇ͥͯ̈́̐i̱̲̯͋̃ͪ́ͦñ͙̜̟̱͡e͋ͥ̿ͯ͏̼̘̝̺̲̜̺ ̪̖̪̲̍ͭ̌́̚S̮ͬc͗͊̈́o̢͎͌ͪ̔ͯ́p̢͇̙̝̻̰ͫͥ͛̂ͨ̎ͭē͖͓̗̤͖̰͌̎ͤͯ
 _Description=This is a Commandfu scope
 Art=screenshot.png
 Author=Matthew Jump
 Icon=icon.png
 Keywords=command line, commands, terminal, developer, tool, script
+SearchHint = search@command:/$
+
 
 [Appearance]
 //PageHeader.Logo=
 
-
 PageHeader.ForegroundColor = #3eb34f
-PageHeader.Background = color:///#121212
+PageHeader.Background = https://pixabay.com/static/uploads/photo/2014/05/27/23/32/matrix-356024_960_720.jpg
 PageHeader.DividerColor = #004d00
 LogoOverlayColor = #FF8D00
 PreviewButtonColor = #3eb34f

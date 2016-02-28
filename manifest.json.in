@@ -1,7 +1,7 @@
 {
     "architecture": "@CLICK_ARCH@",
     "description": "A simple Unity scope that accesses the network",
-    "framework": "ubuntu-sdk-15.04",
+    "framework": "ubuntu-sdk-14.04",
     "hooks": {
         "commandfu": {
             "apparmor": "commandfu.apparmor",
@@ -11,5 +11,5 @@
     "maintainer": "Mateo Salta <mateo_salta@yahoo.com>",
     "name": "commandfu.mateo-salta",
     "title": "Command Line Scope",
-    "version": "0.9"
+    "version": "1.4"
 }

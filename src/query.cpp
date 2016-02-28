@@ -104,8 +104,8 @@ const static string PHONE_TEMPLATE =
         "mascot" : {
         "field": "phone"
         },
+        "subtitle": "summary"
 
-        "subtitle": "subtitle"
         }
         }
         )";
@@ -191,7 +191,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
     //sc::CannedQuery qwerty(sc::SearchQueryBase::query());
 
 
-    sc::Department::SPtr all_depts = sc::Department::create("", query(), _("Deaprtments"));
+    sc::Department::SPtr all_depts = sc::Department::create("", query(), _("Departments"));
 
     sc::Department::SPtr ubu_department = sc::Department::create("ubuntu-phone", query(), _("ubuntu-phone"));
     sc::Department::SPtr forthewicked_department = sc::Department::create("forthewicked", query(), _("for-the-wicked"));

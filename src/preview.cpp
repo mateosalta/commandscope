@@ -52,6 +52,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     sc::PreviewWidget header("header_widget", "header");
     header.add_attribute_mapping("title", "title");
     header.add_attribute_mapping("subtitle", "subtitle");
+    header.add_attribute_mapping("attributes", "attributes");
 
     //SUMMARY
     sc::PreviewWidget summary("summary_widget", "text");
@@ -144,6 +145,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
      power.add_attribute_value("author", sc::Variant(_("Powered By:")));
      power.add_attribute_value("source", sc::Variant("/usr/share/icons/suru/status/scalable/system-devices-panel-information.svg"));
      power.add_attribute_value("comment", sc::Variant("www.commandlinefu.com"));
+
 
         //rating.add_attribute_value("rating-icon-empty", unity::scopes::Variant("file:///tmp/star-empty.svg"));
         //rating.add_attribute_value("rating-icon-full", unity::scopes::Variant("file:///tmp/star-full.svg"));

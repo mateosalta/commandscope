@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-15 19:36-0600\n"
+"POT-Creation-Date: 2016-02-27 21:07-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,77 +18,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. sc::CannedQuery qwerty(sc::SearchQueryBase::query());
-#: ../src/query.cpp:194
-msgid "Deaprtments"
+#: ../src/query.cpp:194 ../trunk/src/query.cpp:194
+msgid "Departments"
 msgstr ""
 
-#: ../src/query.cpp:196
+#: ../src/query.cpp:196 ../trunk/src/query.cpp:196
 msgid "ubuntu-phone"
 msgstr ""
 
-#: ../src/query.cpp:197
+#: ../src/query.cpp:197 ../trunk/src/query.cpp:197
 msgid "for-the-wicked"
 msgstr ""
 
-#: ../src/query.cpp:199
+#: ../src/query.cpp:199 ../trunk/src/query.cpp:199
 msgid "tags"
 msgstr ""
 
-#: ../src/query.cpp:234
+#: ../src/query.cpp:234 ../trunk/src/query.cpp:234
 msgid "Filter"
 msgstr ""
 
-#: ../src/query.cpp:236
+#: ../src/query.cpp:236 ../trunk/src/query.cpp:236
 msgid "sort-by-votes"
 msgstr ""
 
-#: ../src/query.cpp:237
+#: ../src/query.cpp:237 ../trunk/src/query.cpp:237
 msgid "sort-by-date"
 msgstr ""
 
 #: ../src/query.cpp:273 ../src/query.cpp:411 ../src/query.cpp:516
 #: ../src/query.cpp:627 ../src/query.cpp:655 ../src/query.cpp:755
 #: ../src/query.cpp:894 ../src/query.cpp:1106 ../src/query.cpp:1133
+#: ../trunk/src/query.cpp:273 ../trunk/src/query.cpp:411
+#: ../trunk/src/query.cpp:516 ../trunk/src/query.cpp:627
+#: ../trunk/src/query.cpp:655 ../trunk/src/query.cpp:755
+#: ../trunk/src/query.cpp:894 ../trunk/src/query.cpp:1106
+#: ../trunk/src/query.cpp:1133
 msgid "Commands"
 msgstr ""
 
 #: ../src/query.cpp:704 ../src/query.cpp:943 ../src/query.cpp:1183
+#: ../trunk/src/query.cpp:704 ../trunk/src/query.cpp:943
+#: ../trunk/src/query.cpp:1183
 msgid "last-month"
 msgstr ""
 
 #: ../src/query.cpp:725 ../src/query.cpp:964 ../src/query.cpp:1205
+#: ../trunk/src/query.cpp:725 ../trunk/src/query.cpp:964
+#: ../trunk/src/query.cpp:1205
 msgid "all-time-greats"
 msgstr ""
 
-#: ../src/preview.cpp:67
+#: ../src/preview.cpp:68 ../trunk/src/preview.cpp:67
 msgid "Open Terminal"
 msgstr ""
 
-#: ../src/preview.cpp:73
+#: ../src/preview.cpp:74 ../trunk/src/preview.cpp:73
 msgid "Get Terminal"
 msgstr ""
 
-#: ../src/preview.cpp:104
+#: ../src/preview.cpp:105 ../trunk/src/preview.cpp:104
 msgid "Adapt and Copy/Paste Command:"
 msgstr ""
 
-#: ../src/preview.cpp:105
+#: ../src/preview.cpp:106 ../trunk/src/preview.cpp:105
 msgid "Open"
 msgstr ""
 
-#: ../src/preview.cpp:112 ../src/preview.cpp:120 ../src/preview.cpp:128
-#: ../src/preview.cpp:136
+#: ../src/preview.cpp:113 ../src/preview.cpp:121 ../src/preview.cpp:129
+#: ../src/preview.cpp:137 ../trunk/src/preview.cpp:112
+#: ../trunk/src/preview.cpp:120 ../trunk/src/preview.cpp:128
+#: ../trunk/src/preview.cpp:136
 msgid "WARNING:"
 msgstr ""
 
-#: ../src/preview.cpp:114
+#: ../src/preview.cpp:115 ../trunk/src/preview.cpp:114
 msgid ""
 "The Terminal is a magical and powerful thing, on the phone it runs "
 "unconfined. Any  move can and will spell certain doom, delete your files, "
 "launch missiles, destroy your phone, or worse. YOU HAVE BEEN WARNED!"
 msgstr ""
 
-#: ../src/preview.cpp:122
+#: ../src/preview.cpp:123 ../trunk/src/preview.cpp:122
 msgid ""
 "If using this scope on phone/tablet be aware that: <br> - The system image "
 "is read only for a reason, enabling read/write will compromise the system in "
@@ -98,16 +109,16 @@ msgid ""
 "break your phone."
 msgstr ""
 
-#: ../src/preview.cpp:130
+#: ../src/preview.cpp:131 ../trunk/src/preview.cpp:130
 msgid ""
 "Use for documentation purposes only, copy/pasting and running commands is a "
 "terrible idea and is not supported nor recommended"
 msgstr ""
 
-#: ../src/preview.cpp:138
+#: ../src/preview.cpp:139 ../trunk/src/preview.cpp:138
 msgid "Do not use while driving."
 msgstr ""
 
-#: ../src/preview.cpp:144
+#: ../src/preview.cpp:145 ../trunk/src/preview.cpp:144
 msgid "Powered By:"
 msgstr ""
